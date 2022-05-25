@@ -418,6 +418,10 @@ exports.forwardRide = functions.https.onCall(async (data, context) =>{
             }
         }
      });
+
+     if(FCMTokens.length == 0){
+        return {success: false};
+     }
     
     const payload = {
         // notification: {
